@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Grammar and Document Correction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-image: url(images/hero-bg.png);
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .upload-box, .correct-box {
+            display: inline-block;
+            vertical-align: top;
+            width: 60%; /* Adjusted width */
+            height: 40%;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px dashed #ccc;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-sizing: border-box;
+            position: relative; /* Position relative for absolute positioning of icon */
+        }
+        .upload-box {
+            margin-right: 5%;
+            background-image: url('document-icon.png'); /* Background image */
+            background-size: 60px; /* Adjust size of the background image */
+            background-repeat: no-repeat; /* Prevent image from repeating */
+            background-position: center center; /* Center the background image */
+            color: #007bff; /* Icon color */
+        }
+        .icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        /* Customizing the file input button */
+        .file-input-label {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 1%;
+        }
+        .file-input-label:hover {
+            background-color: #0056b3;
+        }
+        h1{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Check Grammar and Document Correction</h1>
+    <div class="upload-box">
+        <i class="icon fas fa-file-word"></i><br>
+        <form action="http://127.0.0.1:5000" method="post" enctype="multipart/form-data">
+            <label for="resume-file" class="file-input-label">Choose File</label>
+            <input type="file" id="resume-file" name="resume" accept=".docx"><br>
+            <button class="button" type="submit">Check Grammar</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Page</title>
+    <!-- Add any additional styling or scripts you may need -->
+</head>
+<body>
+    <h2>Selected Template</h2>
+    <div id="selectedTemplateDisplay"></div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the selected template ID from the URL query parameters
+            const params = new URLSearchParams(window.location.search);
+            const selectedTemplateId = params.get('selectedTemplate');
+
+            // Display the selected template
+            const selectedTemplateDisplay = document.getElementById('selectedTemplateDisplay');
+            if (selectedTemplateId) {
+                selectedTemplateDisplay.textContent = `You selected template ${selectedTemplateId}.`;
+            } else {
+                selectedTemplateDisplay.textContent = 'No template selected.';
+            }
+        });
+    </script>
+</body>
+</html>

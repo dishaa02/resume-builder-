@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Selection</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background-image: url(images/hero-bg.png);
+}
+
+.templates {
+    overflow-x: auto; /* Change from scroll to auto */
+    white-space: nowrap;
+    padding: 20px 0;
+}
+
+.templates::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+.template {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.template img {
+    max-width: 400px;
+    max-height: 350px;
+}
+
+.template:hover {
+    background-color: #f0f0f0;
+}
+
+.continue {
+    width: 200px;
+    height: 50px;
+    font-size: 1.2em;
+    background-color: white;
+    color: rgb(54, 27, 228);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 41%;
+    margin-top: 25px;
+}
+
+h2{
+    color:white;
+    margin-left: 40%;
+    font-style: oblique;
+}
+
+    </style>
+</head>
+<body>
+    <h2>Choose a Template</h2>
+    <div class="templates">
+        <div class="template" onclick="selectTemplate(1)">
+            <img src="images/template1.jpg" alt="Template 1">
+        </div>
+        <div class="template" onclick="selectTemplate(2)">
+            <img src="images/template2.jpg" alt="Template 2">
+        </div>
+        <div class="template" onclick="selectTemplate(3)">
+            <img src="images/template3.jpg" alt="Template 3">
+        </div>
+        <div class="template" onclick="selectTemplate(4)">
+            <img src="images/template4.jpg" alt="Template 4">
+        </div>
+        <div class="template" onclick="selectTemplate(5)">
+            <img src="images/template5.jpg" alt="Template 5">
+        </div>
+        
+    </div>
+
+    <form id="templateForm" action="nextpage.html" method="POST">
+        <input type="hidden" name="selectedTemplate" id="selectedTemplate">
+        <button class="continue" type="submit">Continue</button>
+    </form>
+
+    <script>
+        function selectTemplate(templateId) {
+            document.getElementById('selectedTemplate').value = templateId;
+            document.getElementById('templateForm').submit();
+        }
+    </script>
+</body>
+</html>
